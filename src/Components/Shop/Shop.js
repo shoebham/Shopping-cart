@@ -1,3 +1,4 @@
+import ShopItems from "./ShopItems";
 
 
 const Shop = ()=>{
@@ -5,6 +6,7 @@ const Shop = ()=>{
     return(
         <div>
             <h1>Shop</h1>
+            <ShopItems/>
         </div>
     )
 }

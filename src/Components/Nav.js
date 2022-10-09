@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 const Nav = ()=>{
     return(
         <div className="nav">
+            <h3>Shop-Logo</h3>
             <ul>
                 <Link to="/">
                     <li>Home</li>
