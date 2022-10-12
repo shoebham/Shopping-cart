@@ -1,41 +1,4 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .shop-items{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,10 +8,10 @@
 
 .shop-item{
   display: inline-block;
-/* make it small */
   width: 200px;
-  background-color: #ccc;
-  box-shadow: #282c34 0px 0px 10px;
+  border:2px solid black;
+  background-color: rgb(255, 255, 255);
+  box-shadow: #ebeced 7px -2px 0px 3px;
   margin: 10px;
 }
 .shop-item-image{
@@ -68,8 +31,7 @@
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  box-shadow: #282c34 3px 2px 0px;
-
+  box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white;
 }
 
 .shop-item-buttons button:hover{
@@ -77,10 +39,11 @@
   height: 20px;
   background-color: #000000;
   color: rgb(255, 255, 255);
-  box-shadow: #ffffff 3px 2px 0px;
+  box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white;
+
   cursor: pointer;
 }
-/* change color on click */
+
 .shop-item-buttons button:active{
   border: 1px solid black;
   height: 20px;
@@ -88,4 +51,5 @@
   color: rgb(255, 255, 255);
   box-shadow: #ffffff 1px 1px 0px;
   cursor: pointer;
+ 
 }
