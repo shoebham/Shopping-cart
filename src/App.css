@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+.shop-items{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 10px;
+}
+
+.shop-item{
+  display: inline-block;
+/* make it small */
+  width: 200px;
+  background-color: #ccc;
+  box-shadow: #282c34 0px 0px 10px;
+  margin: 10px;
+}
+.shop-item-image{
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+}
+
+.shop-item-buttons{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.shop-item-buttons button{
+  border: 1px solid black;
+  height: 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  box-shadow: #282c34 3px 2px 0px;
+
+}
+
+.shop-item-buttons button:hover{
+  border: 1px solid black;
+  height: 20px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  box-shadow: #ffffff 3px 2px 0px;
+  cursor: pointer;
+}
+/* change color on click */
+.shop-item-buttons button:active{
+  border: 1px solid black;
+  height: 20px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  box-shadow: #ffffff 1px 1px 0px;
+  cursor: pointer;
+}
