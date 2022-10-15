@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 
-const ShopItems = () => {
-
+const ShopItems = (props) => {
+    const {setCart} = props;
     const [items, setItems] = useState([]);
-
     useEffect(() => {
         fetchItems();
     }, []);
@@ -15,12 +14,15 @@ const ShopItems = () => {
         setItems(items);
     }
 
-
+    function addToCart(item){
+        
+        setCart((prevCart) => [...prevCart, item]);
+    }
     return(
         <div className="shop-items">
             {items.map(item => (
                 <div key={item.id} className="shop-item">
-                    <img class="shop-item-image" src={item.images[2]}/>
+                    <img className="shop-item-image" src={item.images[2]} alt="you can't afford this"/>
                     <div className="shop-item-name">{item.title}</div>
                     <div className="shop-item-price">{item.price}</div>
                     <div className="shop-item-buttons"> 
@@ -28,7 +30,9 @@ const ShopItems = () => {
                         <div className="shop-item-quantity">1</div>
                         <div className="shop-item-increase"><button>+</button></div>
                     </div>
-                    <div className="shop-item-button">Add to cart</div>
+                    <div className="shop-item-buttons add-to-cart">
+                        <button onClick={()=>addToCart(item)}>Add to cart</button>
+                    </div>
                 </div>
             ))}
         </div>

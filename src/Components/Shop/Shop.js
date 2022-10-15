@@ -1,12 +1,12 @@
+import Cart from "../Cart";
 import ShopItems from "./ShopItems";
 
 
-const Shop = ()=>{
-
+const Shop = (props)=>{
     return(
         <div>
             <h1>Shop</h1>
-            <ShopItems/>
+            <ShopItems setCart={props.setCart}/>
         </div>
     )
 }
