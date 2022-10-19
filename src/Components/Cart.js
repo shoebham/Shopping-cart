@@ -19,8 +19,14 @@ const Cart = (props)=>{
     }
     return(
         // render only if cart is there
-        cart.length > 0 && (
+        cart.length >= 0 && (
         <div className="cart">
+            <h2>Cart 
+            <button className="close-cart" onClick={()=>{
+                document.querySelector(".cart").classList.toggle("show");
+            }}>X</button>
+            </h2>
+            
             {cart.map(item => (
                 <div key={item.id} className="cart-item">
                     <img className="cart-item-image" src={item.images[2]} alt="you can't afford this"/>
@@ -29,7 +35,7 @@ const Cart = (props)=>{
                 </div>
             ))}
             <div className="total">
-                <h3>Total:- {total}</h3>
+                <h3>Total:- <span className="total-text">{total}</span></h3>
             </div>
             <div className="cart-button">
             </div>

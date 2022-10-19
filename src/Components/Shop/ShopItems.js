@@ -15,7 +15,6 @@ const ShopItems = (props) => {
     }
 
     function addToCart(item){
-        
         setCart((prevCart) => [...prevCart, item]);
     }
     return(

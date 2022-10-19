@@ -10,7 +10,7 @@ const RouteSwitch = () => {
     const [cart,setCart] = useState([]);
     return (
         <BrowserRouter>
-        <Nav/>
+        <Nav cart={cart}/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/shop" element={<Shop setCart={setCart}/>}/>

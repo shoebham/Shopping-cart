@@ -60,10 +60,43 @@
 }
 
 .cart{
+  display: none;
   width: 300px;
-  height: 500px;
+  height: auto;
   background-color: #ffffff;
   border: 1px solid black;
   box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white;
   position: absolute;
+}
+
+.show{
+  display: block;
+}
+
+.close-cart{
+  float:right;
+  border:none;
+  background: white;
+  color:red;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right:20px;
+}
+
+.cart-item-image{
+  width: 50%;
+  height:50%;
+  background-color: #fff;
+}
+.cart-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.total{
+  padding:10px;
+}
+.total-text{
+  float:right;
 }
