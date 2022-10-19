@@ -100,3 +100,14 @@
 .total-text{
   float:right;
 }
+
+.page-select-button {
+  background: none;
+  margin:2px;
+  cursor:pointer;
+}
+.selected{
+  background: #000000;
+  color: #ffffff; 
+}
+
