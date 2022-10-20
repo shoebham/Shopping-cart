@@ -3,7 +3,7 @@ const Nav = (props)=>{
     return(
         <div className="nav">
             <h3>Shop-Logo</h3>
-            <ul>
+            <ul className="links">
                 <Link to="/">
                     <li>Home</li>
                 </Link>
