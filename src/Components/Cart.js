@@ -18,7 +18,6 @@ const Cart = (props)=>{
         console.log(total);
     }
     return(
-        // render only if cart is there
         cart.length >= 0 && (
         <div className="cart">
             <h2>Cart 

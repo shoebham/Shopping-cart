@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 
 const ShopItems = (props) => {
-    const {setCart} = props;
+    const {setCart,page} = props;
     const [items, setItems] = useState([]);
+
     useEffect(() => {
         fetchItems();
-    }, []);
+    }, [page]);
 
     const fetchItems = async () => {
-        const data = await fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=10");
+        const data = await fetch(`https://api.escuelajs.co/api/v1/products?offset=${page*10-10}&limit=10`);
         const items = await data.json();
         console.log(items);
         setItems(items);

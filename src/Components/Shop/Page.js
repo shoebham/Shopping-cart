@@ -1,17 +1,20 @@
 
 
-const Page = ()=>{
+const Page = (props)=>{
+    const {setPage} = props;
 
+    function selectPage(i){
+        if(document.querySelector(".selected")!=null){
+            document.querySelector(".selected").classList.toggle("selected");
+        }
+        document.querySelector(`.page-select-button:nth-child(${i+1})`).classList.toggle("selected");
+        setPage(i+1);
+        console.log("page selected",i+1);
+    }
     return(
         <div className="page-select">
                 {[...Array(10)].map((e,i)=>(
-                    <button className="page-select-button"  key={i} onClick={()=>{
-                        // select the button with the same key
-                        if(document.querySelector(".selected")!=null){
-                            document.querySelector(".selected").classList.toggle("selected");
-                        }
-                        document.querySelector(`.page-select-button:nth-child(${i+1})`).classList.toggle("selected");
-                    }}>{i+1}</button>
+                    <button className="page-select-button"  key={i} onClick={()=>selectPage(i)}>{i+1}</button>
                 ))}
         </div>
     )
