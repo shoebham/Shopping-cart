@@ -8,9 +8,8 @@ const Shop = (props)=>{
     const [page,setPage] = useState(1);
     return(
         <div>
-            <h1>Shop</h1>
-            <ShopItems setCart={props.setCart} page={page}/>
-            <Page setPage={setPage}/>
+            <h1 className="center">Shop</h1>
+            <ShopItems setCart={props.setCart} page={page} setPage={setPage}/>
         </div>
     )
 }
