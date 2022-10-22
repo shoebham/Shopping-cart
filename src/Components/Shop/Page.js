@@ -16,7 +16,7 @@ const Page = (props)=>{
         <div className="page-select">
                 {[...Array(10)].map((e,i)=>{
                     if(i==0){
-                        return (<button className="page-select-button selected" onClick={()=>selectPage(i)}>{i+1}</button>);
+                        return (<button key = {i} className="page-select-button selected" onClick={()=>selectPage(i)}>{i+1}</button>);
                     }
                     else{
                     return(<button className="page-select-button"  key={i} onClick={()=>selectPage(i)}>

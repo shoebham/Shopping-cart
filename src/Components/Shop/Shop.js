@@ -9,7 +9,7 @@ const Shop = (props)=>{
     return(
         <div>
             <h1 className="center">Shop</h1>
-            <ShopItems setCart={props.setCart} page={page} setPage={setPage}/>
+            <ShopItems cart = {props.cart} setCart={props.setCart} page={page} setPage={setPage}/>
         </div>
     )
 }
