@@ -23,7 +23,16 @@ const ShopItems = (props) => {
         setItems(items);
     }
     function addToCart(item){
-        setCart((prevCart) => [...prevCart, item]);
+        console.log("look here",{[item.id]:{...currentItems[item.id]}});
+        setCart((prevCart)=>(
+                {
+                    ...prevCart,
+                    [item.id]:{...currentItems[item.id],quantity:currentItems[item.id].quantity
+                        +(prevCart[item.id]?.quantity||0),
+                    }
+                }
+                ));    
+        console.log(cart);
     }
     function changeQuantity(id,val){
         setCurrentItems((currentItems)=>({...currentItems,[id]:{...currentItems[id],quantity:currentItems[id].quantity+val}}));
