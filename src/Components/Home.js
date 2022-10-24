@@ -2,7 +2,7 @@
 const Home = ()=>{
 
     return(
-        <div>
+        <div className="center">
             <h1>Home</h1>
         </div>
     )
