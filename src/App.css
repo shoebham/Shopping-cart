@@ -1,4 +1,6 @@
-
+*{
+  font-family: monospace;
+}
 .nav{
   display: flex;
   flex-direction: row;
@@ -52,7 +54,6 @@ li{
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white;
 }
 
 .shop-item-buttons button:hover{
@@ -60,9 +61,17 @@ li{
   height: 20px;
   background-color: #000000;
   color: rgb(255, 255, 255);
-  box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white;
-
+  
   cursor: pointer;
+}
+
+.shop-item{
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.shop-item:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #fff, 0 0 40px #fff, 0 0 80px rgb(0, 0, 0);
 }
 
 .shop-item-buttons button:active{
@@ -70,7 +79,6 @@ li{
   height: 20px;
   background-color: #000000;
   color: rgb(255, 255, 255);
-  box-shadow: #ffffff 1px 1px 0px;
   cursor: pointer;
  
 }
@@ -202,4 +210,45 @@ li{
 .hover-underline-animation:hover:after {
   transform: scaleX(.9);
   transform-origin: bottom right;
+}
+
+.heading{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.content-home{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  width: 50%;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.explore-button{
+  display: inline-block;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+  width: 100px;
+  height: 20%;
+  font-family: monospace;
+  cursor: pointer;
+  transform: translateY(30%);
+}
+.slide-right{
+  background-color: white;
+  color: black;
+  box-shadow: inset 0 0 0 0 #000000,#282c34 3px 2px 0px;
+  /* box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white; */
+  transition: ease-out .7s;
+}
+
+.slide-right:hover{
+  box-shadow: inset 400px 0 0 0 #000000,#282c34 3px 2px 0px;
+  color:white;
+  font-weight: 700;
 }

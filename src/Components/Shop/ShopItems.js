@@ -42,17 +42,17 @@ const ShopItems = (props) => {
         <div className="shop-container">
             <div className="shop-items">
                 {items.map(item => (
-                    <div key={item.id} className="shop-item">
+                    <div key={item.id} className="shop-item ">
                         <img className="shop-item-image" src={item.images[2]} alt="you can't afford this"/>
                         <div className="shop-item-name">{item.title}</div>
                         <div className="shop-item-price">{item.price}</div>
                         <div className="shop-item-buttons"> 
-                            <div className="shop-item-decrease" onClick={()=>changeQuantity(item.id,-1)}><button>-</button></div>
+                            <div className="shop-item-decrease" onClick={()=>changeQuantity(item.id,-1)}><button className="slide-right">-</button></div>
                             <div className="shop-item-quantity">{currentItems[item.id].quantity}</div>
-                            <div className="shop-item-increase" onClick={()=>changeQuantity(item.id,1)}><button>+</button></div>
+                            <div className="shop-item-increase" onClick={()=>changeQuantity(item.id,1)}><button className="slide-right">+</button></div>
                         </div>
                         <div className="shop-item-buttons add-to-cart">
-                            <button onClick={()=>addToCart(item)}>Add to cart</button>
+                            <button  className="slide-right" onClick={()=>addToCart(item)}>Add to cart</button>
                         </div>
                     </div>
                 ))}
