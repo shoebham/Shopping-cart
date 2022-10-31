@@ -11,7 +11,7 @@ const Home = ()=>{
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 <button className="explore-button slide-right" onClick={()=>{
-                    window.location.href="shopping-cart/shop";
+                    window.location.href="/shop";
                 }}>Explore</button>
             </div>
         </div>
