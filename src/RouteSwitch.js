@@ -9,10 +9,11 @@ import Shop from "./Components/Shop/Shop";
 const RouteSwitch = () => {
     const [cart,setCart] = useState({});
     return (
-        <HashRouter  basename>
+        <HashRouter>
         <Nav cart={cart}/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
+                <Route path="/home" element={<Home/>}/>
                 <Route path="/shop" element={<Shop cart={cart} setCart={setCart}/>}/>
             </Routes>
         <Cart cart={cart} setCart={setCart}/>
