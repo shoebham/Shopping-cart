@@ -13,7 +13,6 @@ const RouteSwitch = () => {
         <Nav cart={cart}/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/home" element={<Home/>}/>
                 <Route path="/shop" element={<Shop cart={cart} setCart={setCart}/>}/>
             </Routes>
         <Cart cart={cart} setCart={setCart}/>
