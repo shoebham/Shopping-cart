@@ -116,11 +116,12 @@ li{
   width: 50%;
   height:50%;
   background-color: #fff;
+  margin: 5px;
 }
 .cart-item{
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  justify-content: space-around;
+  padding: 5px;
 }
 
 .total{
@@ -277,4 +278,26 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.cart-quantity{
+  box-shadow: none;
+  height: 15px;
+}
+.cart-item-image{
+  width: 50%;
+  height:50%;
+  background-color: #fff;
+  margin: 5px;
+  box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white;
+  
+}
+
+.text-items{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
