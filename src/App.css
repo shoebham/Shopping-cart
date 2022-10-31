@@ -246,6 +246,7 @@ li{
   transform: translateY(100%);
 }
 .slide-right{
+  cursor: pointer;
   background-color: white;
   color: black;
   box-shadow: inset 0 0 0 0 #000000,#282c34 3px 2px 0px;
@@ -289,8 +290,8 @@ input::-webkit-inner-spin-button {
   background-color: #fff;
   margin: 5px;
   box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white;
-  
 }
+
 
 .text-items{
   display: flex;
@@ -300,4 +301,11 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   align-content: center;
   align-items: center;
+}
+
+.delete-button{
+  /* shift this button to right */
+  margin-left: 80%;
+  background-color: red;
+  color:white;
 }

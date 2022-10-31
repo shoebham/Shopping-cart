@@ -4,6 +4,7 @@ const Cart = (props)=>{
 
     const {cart,setCart} = props;
     useEffect(() => {
+        console.log("rendering");
         getTotal();
     }, [props]);
 
@@ -24,6 +25,11 @@ const Cart = (props)=>{
         setTotal(total);
         console.log(total);
     }
+    function deleteFromCart(item){
+        let tempCart = cart;
+        delete tempCart[item];
+        setCart(()=>({...tempCart}));
+    }
     return(
         (
         Object.keys(cart).length>0&&
@@ -35,20 +41,24 @@ const Cart = (props)=>{
             </h2>
             {Object.keys(cart).map(item => (
                 <div key={item} className="cart-item">
-                <img className="cart-item-image" src={cart[item].images[2]} alt="you can't afford this"/>
-                <div className="text-items">
-                    <div className="cart-item-name">{cart[item].title}</div>
-                    <div className="cart-item-price">${cart[item].price}</div>
-                    <div className="cart-item-quantity">
-                    <input type="number" min="1" className="quantity cart-quantity" id={"cart-quant-"+item} value={cart[item].quantity} onChange={()=>{
-                        setCart((prevCart)=>({...prevCart,[item]:{...cart[item],quantity:document.getElementById(`cart-quant-${item}`).value}}));
-                    }}>
-                    </input>
-                </div>
-                <div className="subtotal">
-                    <span className="subtotal-price">${cart[item].price*cart[item].quantity}</span>
-                </div>
-                </div>
+                    <img className="cart-item-image" src={cart[item].images[2]} alt="you can't afford this"/>
+                    <div className="text-items">
+                        <div className="cart-item-name">{cart[item].title}</div>
+                        <div className="cart-item-price">${cart[item].price}</div>
+                        <div className="cart-item-quantity">
+                        <input type="number" min="1" className="quantity cart-quantity" id={"cart-quant-"+item} 
+                        value={cart[item].quantity} onChange={()=>{
+                            if(document.getElementById(`cart-quant-${item}`).value>0){
+                            setCart((prevCart)=>({...prevCart,[item]:{...cart[item],quantity:document.getElementById(`cart-quant-${item}`).value}}));
+                            }
+                        }}>
+                        </input>
+                    </div>
+                        <div className="subtotal">
+                            <span className="subtotal-price">${cart[item].price*cart[item].quantity}</span>
+                        </div>
+                        <button className="delete-button slide-right" onClick={()=>{deleteFromCart(item)}}> Del </button>
+                    </div>
                 </div>
             ))}
             {/* {cart.map(item => (
