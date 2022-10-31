@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const Cart = (props)=>{
 
-    const {cart} = props;
+    const {cart,setCart} = props;
     useEffect(() => {
         getTotal();
     }, [props]);
@@ -29,7 +29,7 @@ const Cart = (props)=>{
         Object.keys(cart).length>0&&
         <div className="cart">
             <h2>Cart 
-            <button className="close-cart" onClick={()=>{
+            <button className="close-cart slide-right" onClick={()=>{
                 document.querySelector(".cart").classList.toggle("show");
             }}>X</button>
             </h2>
@@ -38,7 +38,12 @@ const Cart = (props)=>{
                 <img className="cart-item-image" src={cart[item].images[2]} alt="you can't afford this"/>
                 <div className="cart-item-name">{cart[item].title}|</div>
                 <div className="cart-item-price">{cart[item].price}|</div>
-                <div className="cart-item-quantity">{cart[item].quantity}</div>
+                <div className="cart-item-quantity">
+                    <input type="number" min="1" className="quantity" id={"cart-quant-"+item} value={cart[item].quantity} onChange={()=>{
+                        setCart((prevCart)=>({...prevCart,[item]:{...cart[item],quantity:document.getElementById(`cart-quant-${item}`).value}}));
+                    }}>
+                    </input>
+                </div>
                 </div>
             ))}
             {/* {cart.map(item => (

@@ -35,7 +35,10 @@ const ShopItems = (props) => {
         console.log(cart);
     }
     function changeQuantity(id,val){
+        // change only if selected quantity is greater than 0
+        if(currentItems[id].quantity+val>0){
         setCurrentItems((currentItems)=>({...currentItems,[id]:{...currentItems[id],quantity:currentItems[id].quantity+val}}));
+        }
     }
     return(
         items.length>0&&
@@ -48,7 +51,12 @@ const ShopItems = (props) => {
                         <div className="shop-item-price">{item.price}</div>
                         <div className="shop-item-buttons"> 
                             <div className="shop-item-decrease" onClick={()=>changeQuantity(item.id,-1)}><button className="slide-right">-</button></div>
-                            <div className="shop-item-quantity">{currentItems[item.id].quantity}</div>
+                            <div className="shop-item-quantity">
+                            <input type="number" min="1" className="quantity" id={"item-quant-"+item.id} value={currentItems[item.id].quantity} onChange={()=>{    
+                                changeQuantity(item.id,document.getElementById(`item-quant-${item.id}`).value-currentItems[item.id].quantity);
+                            }}>
+                            </input>
+                            </div>
                             <div className="shop-item-increase" onClick={()=>changeQuantity(item.id,1)}><button className="slide-right">+</button></div>
                         </div>
                         <div className="shop-item-buttons add-to-cart">

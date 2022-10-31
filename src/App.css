@@ -228,6 +228,11 @@ li{
   flex-direction: column;
 }
 
+.content-home{
+  margin-top: 25px;
+  width: 30%;
+  margin: 0 auto;
+}
 .explore-button{
   display: inline-block;
   justify-content: center;
@@ -237,18 +242,39 @@ li{
   height: 20%;
   font-family: monospace;
   cursor: pointer;
-  transform: translateY(30%);
+  transform: translateY(100%);
 }
 .slide-right{
   background-color: white;
   color: black;
   box-shadow: inset 0 0 0 0 #000000,#282c34 3px 2px 0px;
   /* box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white; */
-  transition: ease-out .7s;
+  transition: all 0.3s ease-in-out;
 }
 
 .slide-right:hover{
   box-shadow: inset 400px 0 0 0 #000000,#282c34 3px 2px 0px;
   color:white;
   font-weight: 700;
+}
+
+.close-cart{
+  color:red;
+  border: 1px solid black;
+}
+
+.quantity{
+  width: 50px;
+  height: 20px;
+  border: 1px solid black;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: #282c34 3px 2px 0px, 3px 2px 1px 1px white;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
