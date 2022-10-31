@@ -9,7 +9,7 @@ import Shop from "./Components/Shop/Shop";
 const RouteSwitch = () => {
     const [cart,setCart] = useState({});
     return (
-        <BrowserRouter>
+        <BrowserRouter basename>
         <Nav cart={cart}/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
